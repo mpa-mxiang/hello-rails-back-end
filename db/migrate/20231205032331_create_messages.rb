@@ -5,5 +5,10 @@ class CreateMessages < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+
+    def update
+      5.times do
+        Message.create(content: "Hello, #{Faker::Name.name}!")
+    end
   end
 end
