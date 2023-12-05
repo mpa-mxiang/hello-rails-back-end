@@ -6,9 +6,16 @@ class CreateMessages < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    def update
-      5.times do
-        Message.create(content: "Hello, #{Faker::Name.name}!")
+    greetings = [
+      "Hello!",
+      "Greetings!",
+      "Hi there!",
+      "Welcome!",
+      "Good day!"
+    ]
+
+    greetings.each do |greeting|
+      Message.create(content: greeting)
     end
   end
 end
